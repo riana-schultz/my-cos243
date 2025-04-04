@@ -1,11 +1,3 @@
-#---
-# Excerpted from "Agile Web Development with Rails 7",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit https://pragprog.com/titles/rails7 for more book information.
-#---
 require "test_helper"
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
@@ -71,6 +63,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   
+  test "can't delete product in cart" do
+    assert_difference("Product.count", 0) do
+      delete product_url(products(:two))
+    end
+
+    assert_redirected_to products_url
+  end
+
   test "should destroy product" do
     assert_difference("Product.count", -1) do
       delete product_url(@product)
