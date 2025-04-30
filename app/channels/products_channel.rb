@@ -6,10 +6,12 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class StoreController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
-  def index
-    @products = Product.order(:title)
+class ProductsChannel < ApplicationCable::Channel
+  def subscribed
+    stream_from "products"
+  end
+
+  def unsubscribed
+    # Any cleanup needed when channel is unsubscribed
   end
 end

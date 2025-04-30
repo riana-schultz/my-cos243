@@ -6,10 +6,9 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class StoreController < ApplicationController
-  include CurrentCart
-  before_action :set_cart
-  def index
-    @products = Product.order(:title)
+class AddOrderToLineItem < ActiveRecord::Migration[7.0]
+  def change
+    add_reference :line_items, :order, null: true, foreign_key: true
+    change_column :line_items, :cart_id, :integer, null: true
   end
 end
