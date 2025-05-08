@@ -6,16 +6,8 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class ApplicationController < ActionController::Base
-    before_action :authorize
-  
-      # ...
-  
-    protected
-  
-      def authorize
-        unless User.find_by(id: session[:user_id])
-          redirect_to login_url, notice: "Please log in"
-        end
-      end
+class AdminController < ApplicationController
+  def index
+    @total_orders = Order.count
   end
+end

@@ -6,16 +6,11 @@
 # We make no guarantees that this code is fit for any purpose.
 # Visit https://pragprog.com/titles/rails7 for more book information.
 #---
-class ApplicationController < ActionController::Base
-    before_action :authorize
-  
-      # ...
-  
-    protected
-  
-      def authorize
-        unless User.find_by(id: session[:user_id])
-          redirect_to login_url, notice: "Please log in"
-        end
-      end
+require "test_helper"
+
+class AdminControllerTest < ActionDispatch::IntegrationTest
+  test "should get index" do
+    get admin_url
+    assert_response :success
   end
+end
