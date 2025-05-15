@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import LocaleController from "./locale_controller"
+application.register("locale", LocaleController)
+
 import PaymentController from "./payment_controller"
 application.register("payment", PaymentController)

@@ -1,0 +1,63 @@
+bilala:
+
+  number:
+    currency:
+      format:
+        unit:      "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+
+  errors:
+    template:
+      body:        "There were problems with the following fields:"
+      header:       
+        one:       "1 error prohibited this %{model} from being saved"
+        other:     "%{count} errors prohibited this %{model} from being saved"
+
+  layouts:
+    application:
+      title:       "Bet An Kitab Sakit"
+      home:        "Kuzpili"
+      questions:   "Riji"
+      news:        "Xabar"
+      contact:     "Sese"
+
+  carts:
+    cart:
+      title:       "Puspusii"
+      empty:       "Puspus choyi"
+      checkout:    "Kafaha"
+
+  store:
+    index:
+      title_html:  "Katkatgii Sakit"
+    product:
+      add_html:    "zitka puspus"
+
+  orders:
+    new:
+      legend:       "Njang nani"
+    form:
+      name:         "Iri"
+      address_html: "Kuzpili sifre"
+      email:        "E-katkat"
+      pay_type:     "Kafaha Ti"
+      pay_prompt_html: "Unya"
+      submit:       "Risi"
+      pay_types:
+        "Check":           "Gurus Ti Katkat"
+        "Credit card":     "Gurus Ti Kowshu"
+        "Purchase order":  "Njang Sifre"
+    check:
+      routing_number: "Banc Sifre"
+      account_number: "Sifre An Mane"
+    cc:
+      cc_number: "Gurus Ti Kowshu Sifre"
+      expiration_date: "Ro Risi"
+    po:
+      po_number: "Katkat Sifre"
+
+
+  thanks:          "Shukran Bilhen"
